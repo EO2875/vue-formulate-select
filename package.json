@@ -1,12 +1,13 @@
 {
   "name": "@cone2875/vue-formulate-select",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "Vue Formulate + Vue Select",
-  "private": false, 
+  "private": false,
+  "main": "dist/index.js",
   "_spec": "@cone2875/vue-formulate-select",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "webpack",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "keywords": [
@@ -32,12 +33,16 @@
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^5.4.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"
   },
   "author": {
     "name": "Jose Etienne Ortega",
     "email": "etiortega@yahoo.com"
   },
-  "license": "LGPL"
+  "license": "LGPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EO2875/vue-formulate-select.git"
+  }
 }

@@ -18,14 +18,14 @@ As with any [Vue Formulate plugin][3]:
 import Vue from 'vue'
 import VueFormulate from '@braid/vue-formulate'
 
-import FormulateVSelectPlugin from 'vue-formulate-select'
+import FormulateVSelectPlugin from '@cone2875/vue-formulate-select'
 
 // !important
 // Import the vue-select css
 import 'vue-select/dist/vue-select.css';
 
 Vue.use(VueFormulate, {
-    plugins: [ FormulateVueSelectPlugin ]
+    plugins: [ FormulateVSelectPlugin ]
 })
 ```
 
@@ -64,6 +64,40 @@ currently hard-coded as:
 
 As such, using the `taggable` prop wil always require you to define 
 `createOption` too.
+
+Moreover, Vue Formulate normalizes the `value` into a string value. Thus, using
+objects as values is impossible. Secondly, using numbers as the value can 
+result in the following problem:
+
+```html
+<!-- template -->
+<FormulateInput
+    type="vue-select"
+    v-model="val"
+    :options="options"
+    />
+```
+
+```javascript
+// script
+export default {
+    data(){
+        return {
+            val: 3,
+            options: [
+                {value: '1', label: 'Mexico'},
+                {value: '2', label: 'Thailand'},
+                {value: '3', label: 'Burundi'},
+            ]
+        }
+    }
+}
+```
+
+Will display an initial value of "3" in the input, not "Burundi". It is thus
+necessary to turn `val` into `"3"` before the `FormulateInput` is created and
+turn it back into a number before submission, when necessary. 
+
 
 [1]: https://vueformulate.com
 [2]: https://vue-select.org
