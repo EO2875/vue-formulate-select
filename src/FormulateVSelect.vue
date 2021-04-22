@@ -7,6 +7,7 @@
     :options="context.options"
     v-bind="context.attributes"
 
+    @search="search($event)"
     :reduce="x => x.value"
     label="label"/>
 </template>
@@ -22,6 +23,11 @@ export default {
     context: {
       type: Object,
       required: true
+    },
+  },
+  methods: {
+    search(val) {
+      this.$emit("search", val);
     },
   },
 }
