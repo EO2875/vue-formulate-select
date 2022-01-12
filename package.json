@@ -1,6 +1,6 @@
 {
   "name": "@cone2875/vue-formulate-select",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Vue Formulate + Vue Select",
   "private": false,
   "main": "dist/index.js",
