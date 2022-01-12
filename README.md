@@ -7,7 +7,7 @@ Vue Formulate Select is a [Vue Formulate][1] plugin that provides the
 
 ## NPM
 ```sh
-npm i @cone2875/vue-formulate-select
+npm i vue-select @cone2875/vue-formulate-select
 ```
 
 ## Add to Vue
