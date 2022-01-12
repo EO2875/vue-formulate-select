@@ -8,7 +8,9 @@
     v-bind="context.attributes"
 
     :reduce="x => x.value"
-    label="label"/>
+    label="label"
+	
+	@close="onClose"/>
 </template>
 
 <script>
@@ -24,5 +26,10 @@ export default {
       required: true
     },
   },
+  methods: {
+	onClose: function () {
+		this.context.blurHandler();
+	}
+  }
 }
 </script>
